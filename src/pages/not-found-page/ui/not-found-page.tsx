@@ -6,7 +6,7 @@ import { IconCat } from '@tabler/icons-react'
 export const NotFoundPage = () => {
 	return (
 		<div className={style.container_page}>
-			<Suspense fallback={<Loader color='blue' />}>
+			<Suspense fallback={<Loader color='var(--mantine-color-black-6)' />}>
 				<Flex
 					mih={'50vh'}
 					direction='column'

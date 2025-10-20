@@ -5,6 +5,11 @@ import path from 'node:path'
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react()],
+	base: './',
+	build: {
+    outDir: 'dist',
+    sourcemap: false,
+  },
 	server: {
 		port: 5173,
 	},
