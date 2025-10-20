@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# Catpedia 🐱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## О проекте
 
-Currently, two official plugins are available:
+Веб-приложение - энциклопедия пород кошек с удобной системой карточек и характеристиками каждой породы.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️Технологии:
+- React (Hooks, компонентный подход)
+- TypeScript
+- Vite (сборка проекта)
+- Material UI
+- HTML5, CSS3
 
-## React Compiler
+## Функционал
+На странице /products:  
+• выводится список карточек с подзагрузкой данных при пагинации
+• карточкам можно поставить лайк  
+• карточку можно удалить, нажава на иконку удаления
+• есть фильтр для просмотра всех карточек и карточек, добавленных в избранное  
+• карточки(текст) должен быть урезан, чтобы у карточек была одинаковая высота  
+• при клике на любом месте карточки (кроме иконки лайка и кнопки удаления) попадаем на отдельную страницу карточки.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+На странице /products/:id  
+• более подробная информация о породе кошки
+• есть кнопка для перехода на основную страницу 
 
-## Expanding the ESLint configuration
+На отдельной странице /create-product реализовано создание карточки с данными о породе кошки
+• есть форма с обязательными полями
+• при отправке формы, данные сохраняются в общий store. 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Скрипты
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Команда           | Назначение                         |
+| ----------------- | ---------------------------------- |
+| `npm run dev`     | Запуск проекта в dev-режиме        |
+| `npm run build`   | Сборка проекта                     |
+| `npm run preview` | Предпросмотр production-сборки     |
+| `npm run lint`    | Проверка ESLint                    |
+| `npm run format`  | Форматирование кода через Prettier |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Установка и запуск
+### 1.Клонируйте репозиторий:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+git clone https://github.com/tanyanikitina176/Catpedia.git
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Перейдите в папку проекта:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+cd Catpedia
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 3.Установите зависимости:
+
+npm install
+
+### 4.Запустите проект:
+
+npm run dev

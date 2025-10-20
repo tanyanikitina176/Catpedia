@@ -1,0 +1,10 @@
+.card_container {
+	display: grid;
+	grid-template-columns: 400px 1fr;
+	grid-template-rows: 1fr max-content;
+	background-color: var(--mantine-color-black-0);
+	border-radius: 10px;
+	overflow: hidden;
+	margin-block: 50px;
+	padding: 30px 40px;
+}

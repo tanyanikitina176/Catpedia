@@ -1,0 +1,103 @@
+import img from '@/assets/image/photo_2025-09-27_22-49-48.jpg'
+import type { Cat } from '@/components/cat-card/type'
+
+export const mock: Cat[] = [
+	{
+		id: '1',
+		width: 13,
+		height: 14,
+		url: img,
+		breeds: {
+			id: 1,
+			name: 'Suam',
+			weight: 'от 12 до 23 ',
+			height: '25 to 27 inches at the shoulder',
+			life_span: '10 to 13 years',
+			breed_group: 'Hound',
+		},
+	},
+	{
+		id: '2',
+		width: 13,
+		height: 14,
+		url: img,
+		breeds: {
+			id: 1,
+			name: 'Suam',
+			weight: 'от 12 до 23 ',
+			height: '25 to 27 inches at the shoulder',
+			life_span: '10 to 13 years',
+			breed_group: 'Hound',
+		},
+	},
+	{
+		id: '3',
+		width: 13,
+		height: 14,
+		url: img,
+		breeds: {
+			id: 1,
+			name: 'Suam',
+			weight: 'от 12 до 23 ',
+			height: '25 to 27 inches at the shoulder',
+			life_span: '10 to 13 years',
+			breed_group: 'Hound',
+		},
+	},
+	{
+		id: '323fs',
+		width: 13,
+		height: 14,
+		url: img,
+		breeds: {
+			id: 1,
+			name: 'Suam',
+			weight: 'от 12 до 23 ',
+			height: '25 to 27 inches at the shoulder',
+			life_span: '10 to 13 years',
+			breed_group: 'Hound',
+		},
+	},
+	{
+		id: '566',
+		width: 13,
+		height: 14,
+		url: img,
+		breeds: {
+			id: 1,
+			name: 'Suam',
+			weight: 'от 12 до 23 ',
+			height: '25 to 27 inches at the shoulder',
+			life_span: '10 to 13 years',
+			breed_group: 'Hound',
+		},
+	},
+	{
+		id: '56',
+		width: 13,
+		height: 14,
+		url: img,
+		breeds: {
+			id: 1,
+			name: 'Suam',
+			weight: 'от 12 до 23 ',
+			height: '25 to 27 inches at the shoulder',
+			life_span: '10 to 13 years',
+			breed_group: 'Hound',
+		},
+	},
+	{
+		id: '6',
+		width: 13,
+		height: 14,
+		url: img,
+		breeds: {
+			id: 1,
+			name: 'Suam',
+			weight: 'от 12 до 23 ',
+			height: '25 to 27 inches at the shoulder',
+			life_span: '10 to 13 years',
+			breed_group: 'Hound',
+		},
+	},
+]

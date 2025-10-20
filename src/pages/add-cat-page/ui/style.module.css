@@ -1,0 +1,8 @@
+.add_cat__wrapper {
+	background-color: var(--mantine-color-black-6);
+}
+
+.add_cat__container {
+	max-width: max-content;
+	margin: 0 auto;
+}

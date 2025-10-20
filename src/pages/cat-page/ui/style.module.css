@@ -1,0 +1,8 @@
+.page_wrapper {
+	background-color: var(--mantine-color-black-6);
+}
+
+.cat_container {
+	margin: 0 auto;
+	max-width: max-content;
+}

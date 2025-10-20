@@ -1,0 +1,38 @@
+.container_page {
+	min-height: 100vh;
+}
+
+.notFound {
+	margin: auto;
+	transform: translateY(50%);
+	max-width: 384px;
+	border: 2px solid var(--mantine-color-black-6);
+	border-radius: 8px;
+	padding-inline-start: 60px;
+	padding-block-start: 35px;
+	padding-block-end: 45px;
+}
+
+.notFound_header {
+	gap: 25px;
+}
+
+.notFound_title {
+	font-size: 40px;
+	font-weight: 600;
+}
+
+.notFound_message_list {
+	padding-left: 29px;
+	list-style: disc;
+}
+
+.notFound_message_item {
+	list-style-position: outside;
+	padding-bottom: 3px;
+	letter-spacing: -0.4px;
+}
+
+.notFound_back_link {
+	text-underline-offset: 3px;
+}

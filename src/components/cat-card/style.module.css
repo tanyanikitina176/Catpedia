@@ -1,0 +1,39 @@
+.card_container {
+	display: flex;
+	border-radius: 10px;
+	flex-direction: column;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+
+.image {
+	height: 300px;
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	background-color: var(--mantine-color-black-2);
+}
+
+.card_icon__container {
+	background-color: var(--mantine-color-black-0);
+	display: flex;
+	justify-content: space-between;
+	padding: 25px 20px;
+	align-items: center;
+}
+
+.icon_wrapper {
+	flex-shrink: 0;
+}
+
+.icon_active {
+	fill: #f04646;
+}
+
+.delete_icon {
+	filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
+	position: absolute;
+	right: 15px;
+	top: 15px;
+}

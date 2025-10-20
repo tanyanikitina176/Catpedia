@@ -1,0 +1,8 @@
+.list_wrapper {
+	display: flex;
+	flex-direction: column;
+	outline: 1px var(--mantine-color-black-3) solid;
+	border-radius: 10px;
+	padding: 30px;
+	gap: 30px;
+}
