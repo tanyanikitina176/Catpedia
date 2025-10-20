@@ -7,17 +7,15 @@ import { NotFoundPage } from '@/pages/not-found-page'
 
 function App() {
 	return (
-		<>
-			<Routes>
-				<Route path='/' element={<Navigate to='/products' replace />} />
-				<Route path='/products'>
-					<Route index element={<CatsPage />} />
-					<Route path=':id' element={<CatPage />} />
-				</Route>
-				<Route path='/create-product' element={<AddCatPage />}></Route>
-				<Route path='*' element={<NotFoundPage />} />
-			</Routes>
-		</>
+		<Routes>
+			<Route path='/' element={<Navigate to='/products' replace />} />
+			<Route path='/products'>
+				<Route index element={<CatsPage />} />
+				<Route path=':id' element={<CatPage />} />
+			</Route>
+			<Route path='/create-product' element={<AddCatPage />}></Route>
+			<Route path='*' element={<NotFoundPage />} />
+		</Routes>
 	)
 }
 

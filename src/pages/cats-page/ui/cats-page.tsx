@@ -16,7 +16,8 @@ export const CatsPage = () => {
 		threshold: 1,
 	})
 
-	const shouldLoadMore = entry?.isIntersecting && filter !== 'favourites'
+	const isFavouritesFilter = filter === 'favourites'
+	const shouldLoadMore = entry?.isIntersecting && !isFavouritesFilter
 
 	useEffect(() => {
 		if (shouldLoadMore) {
@@ -27,8 +28,6 @@ export const CatsPage = () => {
 	const handleRetry = () => {
 		getCats(pageNumber)
 	}
-
-	const isFavouritesFilter = filter === 'favourites'
 
 	const filteredCats = useMemo(() => {
 		if (!cats) return []

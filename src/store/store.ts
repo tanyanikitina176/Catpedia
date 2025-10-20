@@ -1,4 +1,4 @@
-import { fetchCats } from '@/api/api-clients'
+import { fetchCatById, fetchCats } from '@/api/api-clients'
 import type { Cat, CatDto } from '@/components/cat-card/type'
 import { create } from 'zustand'
 
@@ -7,10 +7,13 @@ interface CatsStore {
 	loading: boolean
 	error: string | null
 	likeCatIds: string[]
+	currentCat: Cat | null
 	addCat: (newCat: Cat) => void
 	deleteCat: (catData: Cat) => void
 	likeCatCard: (likeId: string) => void
 	getCats: (pageNumber: number) => Promise<void>
+	getCatById: (id: string) => Promise<void>
+	setCurrentCat: (cat: Cat | null) => void
 	pageNumber: number
 }
 
@@ -19,6 +22,7 @@ const useStore = create<CatsStore>((set, get) => ({
 	loading: false,
 	error: null,
 	likeCatIds: [],
+	currentCat: null,
 	pageNumber: 0,
 	addCat(newCat) {
 		const cats = [...get().cats, newCat]
@@ -61,12 +65,37 @@ const useStore = create<CatsStore>((set, get) => ({
 			})
 		}
 	},
+	getCatById: async (id: string) => {
+		try {
+			set({ loading: true, error: null })
+			const result = await fetchCatById(id)
+			if (result.status === 'success' && 'data' in result) {
+				const currentCat = mapCat(result.data)
+				set({ currentCat, loading: false, error: null })
+			} else if ('message' in result) {
+				set({
+					error: result.message,
+					loading: false,
+				})
+			}
+		} catch (e) {
+			set({
+				error: e instanceof Error ? e.message : 'Unknown error',
+				loading: false,
+			})
+		}
+	},
+	setCurrentCat: (currentCat: Cat | null) => {
+		set({ currentCat })
+	},
 }))
 
 function mapCats(cats: CatDto[]): Cat[] {
-	return cats.map((cat) => {
-		return { ...cat, breed: cat.breeds[0] }
-	})
+	return cats.map(mapCat)
+}
+
+function mapCat(cat: CatDto): Cat {
+	return { ...cat, breed: cat.breeds[0] }
 }
 
 export default useStore

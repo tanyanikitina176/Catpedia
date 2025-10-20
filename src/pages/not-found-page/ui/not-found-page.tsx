@@ -36,16 +36,8 @@ export const NotFoundPage = () => {
 								Страница не найдена
 							</Text>
 							<List withPadding className={style.notFound_message_list}>
-								<List.Item className={style.notFound_message_item}>
-									<Text size='17px' fw={500}>
-										или неправильный адрес,
-									</Text>
-								</List.Item>
-								<List.Item className={style.notFound_message_item}>
-									<Text size='17px' fw={500}>
-										или страница удалена.
-									</Text>
-								</List.Item>
+								<NotFoundMessageItem text='или неправильный адрес,' />
+								<NotFoundMessageItem text='или страница удалена.' />
 							</List>
 						</Flex>
 					</Flex>
@@ -61,5 +53,15 @@ export const NotFoundPage = () => {
 				</Flex>
 			</Suspense>
 		</div>
+	)
+}
+
+const NotFoundMessageItem = ({ text }: { text: string }) => {
+	return (
+		<List.Item className={style.notFound_message_item}>
+			<Text size='17px' fw={500}>
+				{text}
+			</Text>
+		</List.Item>
 	)
 }

@@ -16,13 +16,11 @@ export const CatCard = ({ cat }: CatCardProps) => {
 	const handleLikeClick = (e: React.MouseEvent) => {
 		e.stopPropagation()
 		useStore.getState().likeCatCard(cat.id)
-		console.log(useStore.getState().cats)
 	}
 
 	const handleDeleteClick = (e: React.MouseEvent) => {
 		e.stopPropagation()
 		useStore.getState().deleteCat(cat)
-		console.log(useStore.getState().cats)
 	}
 
 	const handleCardClick = () => {

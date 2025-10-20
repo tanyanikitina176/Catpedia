@@ -3,17 +3,13 @@ import { CatInfo } from '../cat-info/cat-info'
 import { Button } from '@mantine/core'
 import type { Cat } from '../cat-card/type'
 import { IconArrowLeft } from '@tabler/icons-react'
-import { useNavigate } from 'react-router-dom'
 
 interface CatCardBigProps {
 	catData: Cat
+	onBackClick: () => void
 }
 
-export const CatCardBig = ({ catData }: CatCardBigProps) => {
-	const navigate = useNavigate()
-	const handleClickBack = () => {
-		navigate(-1)
-	}
+export const CatCardBig = ({ catData, onBackClick }: CatCardBigProps) => {
 	return (
 		<>
 			<img src={catData.url} className={style.card_image} />
@@ -26,7 +22,7 @@ export const CatCardBig = ({ catData }: CatCardBigProps) => {
 				<Button
 					className={style.button}
 					leftSection={<IconArrowLeft />}
-					onClick={handleClickBack}
+					onClick={onBackClick}
 				>
 					Back
 				</Button>
