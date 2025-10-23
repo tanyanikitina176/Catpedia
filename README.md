@@ -8,7 +8,7 @@
 - React (Hooks, компонентный подход)
 - TypeScript
 - Vite (сборка проекта)
-- Material UI
+- Mantine UI
 - HTML5, CSS3
 
 ## Функционал
